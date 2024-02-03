@@ -1,14 +1,15 @@
-from .files_abstract import FilesAbstract # importation de la classe FilesAbstract
-class TxtFile(FilesAbstract) : # inheritance from files_abstract
+from services.files_abstract import FilesAbstract # importation de la classe FilesAbstract
+class JsonFile(FilesAbstract) : # inheritance from files_abstract
+    pass # besoin de comprehension de cette classe quelle utilité ?
     def __init__(self, name : str, size : float ,typefap : str, extension : str, users :  list) -> None:
         super().__init__(name, size, typefap, extension, users)
     def read_g(self, extension): # abstract method
-        if self.extensionfa == "txt" :
+        if self.extensionfa == "json" :
             fread = open(r"C:\Users\abdo6\OneDrive\Bureau\ExplorationSystemProject\exploration-system-project-\services\files", "r") # besoin de rajouter les files json pour compléter le chemin d'accès
         else :
             pass
     def modify(self,extension): # abstract method
-            if self.extensionfa == "txt" :
+            if self.extensionfa == "json" :
                 fwrite = open(r"C:\Users\abdo6\OneDrive\Bureau\ExplorationSystemProject\exploration-system-project-\services\files", "w") # besoin de rajouter les files json pour compléter le chemin d'accès
                 fwrite.write("write something") # cette ligne peut etre mieux developpée
             else :
